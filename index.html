@@ -12,45 +12,70 @@
       referrerpolicy="no-referrer"
     ></script>
     <style>
-        /* *{
+        *{
             margin: 0;
-            padding: 0;
             box-sizing: border-box;
-        } */
+        }
+
+        #progress{
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: blue;
+            height: 3px;
+            width: 0;
+            z-index: 1999;
+        }
     </style>
   </head>
   <body>
+
+    <div id="progress">
+
+    </div>
     <script>
       console.log("pixi", PIXI);
       const game = new PIXI.Application({
-        // width : innerWidth,
-        // height : innerHeight,
-        width : 1400,
-        height : 700,
+        width : innerWidth,
+        height : innerHeight,
+        // width : 1520,
+        // height : 720,
         backgroundColor: 0xF9E79F
       })
       console.log('pixi instance',game);
       document.body.appendChild(game.view)
 
       const hello = new PIXI.Text('Hello... Tarun 😁')
-    //   hello.x = 1400/2
-    //   hello.y = 700/2
+    //   hello.x = 1520/2
+    //   hello.y = 720/2
     //   hello.anchor.set(0.5)  
+      hello.x = innerWidth/2
+      hello.y = innerHeight/2
+      hello.anchor.set(0.5)  
 
-''
-      hello.x = 1000
-      hello.y = 500
-      hello.anchor.set(0.5)
-     
-
-      game.loader.add('car','assets/icons8-sedan-64.png').add('assets/icons8-sedan-96.png').load(
+      game.loader.add('car','assets/icons8-sedan-64.png').load(
         () => {
-            
             const car = PIXI.Sprite.from('car')
             game.stage.addChild(car)
             game.stage.addChild(hello)
         }
       )
+    //   game.loader.add('car','assets/icons8-sedan-96.png').load(
+    //     () => {
+    //         const car1 = PIXI.Sprite.from('car')
+    //         game.stage.addChild(car1)
+    //     }
+    //   )
+
+      let pDiv = document.getElementById('progress')
+      game.loader.onProgress.add((e)=>{
+        console.log('loaded',e.progress);
+        pDiv.style.width = e.progress+"%"
+
+        // if(e.progress == 100){
+        //     pDiv.style.width = 0
+        // }
+      })
     </script>
   </body>
 </html>
