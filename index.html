@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.5.2/browser/pixi.js"
+      integrity="sha512-XHX32YCocEDCIiENmO7pf91TtRITLfCagN+uLlj9sJ7RUVBHN1JZtlfb02x4OyXfkuQegd1u6i9mzpRMg+w5xw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+        /* *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        } */
+    </style>
+  </head>
+  <body>
+    <script>
+      console.log("pixi", PIXI);
+      const game = new PIXI.Application({
+        // width : innerWidth,
+        // height : innerHeight,
+        width : 1400,
+        height : 700,
+        backgroundColor: 0xF9E79F
+      })
+      console.log('pixi instance',game);
+      document.body.appendChild(game.view)
+
+      const hello = new PIXI.Text('Hello... Tarun 😁')
+    //   hello.x = 1400/2
+    //   hello.y = 700/2
+    //   hello.anchor.set(0.5)  
+
+''
+      hello.x = 1000
+      hello.y = 500
+      hello.anchor.set(0.5)
+     
+
+      game.loader.add('car','assets/icons8-sedan-64.png').add('assets/icons8-sedan-96.png').load(
+        () => {
+            
+            const car = PIXI.Sprite.from('car')
+            game.stage.addChild(car)
+            game.stage.addChild(hello)
+        }
+      )
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+cjs = common js like jab hum node mai require use krte hai
+browser
+
+
+
+pixi ki browser cdn link lena
+
+node -v
+npm -v
+npx -v
+
+for our local server 
+npx http-server
+
+
+
+      console.log("pixi", PIXI);
+      const game = new PIXI.Application()
+      console.log('pixi instance',game);
+      document.body.appendChild(game.view)
+
+
+      ye 4 step to follow hi krne hai apne ko
+
+      koi bhi class ka pehla letter capital hota hai
+
+      0,0 se start hoga canvas
+
+
+       hello.anchor.set(0.5)   
+             range = 0-1 rahegi
+
+
+             loader is a asynchronous method
+      
