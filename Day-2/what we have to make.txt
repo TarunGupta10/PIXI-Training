@@ -26,3 +26,7 @@ Result screen =
     👉 message
     👉 score
     👉 exit,restart
+
+
+https://statsroyale.com/cards
+https://cardmeister.github.io/
