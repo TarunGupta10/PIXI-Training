@@ -8,7 +8,7 @@ document.getElementById("game").append(game.view);
 
 loadAssets([
     { name:"back", url:"/assets/cardback.png"},
-    { name:"front", url:"/assets/spade3.svg"},
+    { name:"front", url:"/Day-2/cards/clubA.svg"},
 ], start)
 
 // -------------------------------
