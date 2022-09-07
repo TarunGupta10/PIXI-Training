@@ -7,8 +7,8 @@ const game = new PIXI.Application({
 document.getElementById("game").append(game.view);
 
 loadAssets([
-    { name:"back", url:"/assets/cardback2.png"},
-    { name:"front", url:"/assets/card3.jpg"},
+    { name:"back", url:"/assets/cardback.png"},
+    { name:"front", url:"/assets/spade3.svg"},
 ], start)
 
 // -------------------------------
@@ -32,28 +32,15 @@ function loadAssets(list, onLoadComplete) {
 }
 
 
-// function start(loader, resources){
-// console.log('params', arguments);
-// const back = PIXI.Sprite.from(resources['back'],texture)
-// back.scale.set(1)
-// game.stage.addChild(back)
-
-// const smily = new PIXI.Texture(resources['front'].texture,
-// new PIXI.Rectangle(0,0,151,151))
-// const front = PIXI.Sprite.from(smily)
-// // front.scale.set(1)
-// game.stage.addChild(front)
-// }
-
 function start(loader, resources) {
   console.log('params ', arguments);
   const back = PIXI.Sprite.from(resources['back'].texture);
-  back.scale.set(1);
+  back.scale.set(0.12);
   game.stage.addChild(back);
 
-  const smily = new PIXI.Texture(resources['front'].texture,
-  new PIXI.Rectangle(4,4,151,151));
-  const front = PIXI.Sprite.from(smily);
-  // front.scale.set(0.2);
+  // const smily = new PIXI.Texture(resources['front'].texture,
+  // new PIXI.Rectangle(4,4,151,151));
+  const front = PIXI.Sprite.from(resources['front'].texture);
+  front.scale.set(1.1);
   game.stage.addChild(front);
 }
