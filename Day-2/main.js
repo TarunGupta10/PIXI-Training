@@ -8,7 +8,7 @@ document.getElementById("game").append(game.view);
 
 loadAssets([
     { name:"back", url:"/assets/cardback.png"},
-    { name:"front", url:"/Day-2/cards/clubA.svg"},
+    { name:"front", url:"/assets/carddeck.png"},
 ], start)
 
 // -------------------------------
@@ -34,13 +34,29 @@ function loadAssets(list, onLoadComplete) {
 
 function start(loader, resources) {
   console.log('params ', arguments);
+  var d = 80
+  for(var i=0;i<4;i++){
   const back = PIXI.Sprite.from(resources['back'].texture);
   back.scale.set(0.12);
+  back.x = d
+  back.y = 30
   game.stage.addChild(back);
-
-  // const smily = new PIXI.Texture(resources['front'].texture,
-  // new PIXI.Rectangle(4,4,151,151));
-  const front = PIXI.Sprite.from(resources['front'].texture);
-  front.scale.set(1.1);
+  d=d+400
+  }
+  let x = 0
+  let y = 0
+  var e=80
+  for(var i=0;i<4;i++){
+  const card = new PIXI.Texture(resources['front'].texture,
+  new PIXI.Rectangle(0,0,125,181));
+  const front = PIXI.Sprite.from(card);
+  front.scale.set(1);
+  front.style.display = "none"
+  front.x = e
+  front.y = 30
   game.stage.addChild(front);
+  e=e+400
+  x+=125
+  y+=181
+  }
 }
