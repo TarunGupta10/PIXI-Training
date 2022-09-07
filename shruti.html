@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.5.2/browser/pixi.js"
+      integrity="sha512-XHX32YCocEDCIiENmO7pf91TtRITLfCagN+uLlj9sJ7RUVBHN1JZtlfb02x4OyXfkuQegd1u6i9mzpRMg+w5xw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      #progress{
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: blue;
+            height: 3px;
+            width: 0;
+            z-index: 1999;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="progress">
+    </div>
+
+    <script>
+      console.log("Pixi", PIXI);
+      const game = new PIXI.Application({
+        width: innerWidth,
+        height: innerHeight,
+        backgroundColor: 0xff000,
+      });
+      console.log("game body");
+      document.body.appendChild(game.view);
+      const hello = new PIXI.Text("Hello");
+      hello.x = innerWidth / 2 - 50;
+      hello.y = 50;
+      game.stage.addChild(hello)
+
+      
+
+      //   let sprite = PIXI.Sprite.from('./assets/sample.png');
+      //   game.stage.addChild(sprite);
+      //   sprite.x = innerWidth/2-50;
+
+      //   game.loader.add('rocket','./assets/ferrar.png').load(()=>{
+      //     let sprite = PIXI.Sprite.from('./assets/ferrar.png');
+      //     sprite.x = innerWidth/2-250;
+      //     game.stage.addChild(sprite);
+
+      //   });
+  
+      // sprite.anchor.set(0.5)
+
+
+
+      
+      // sprite.anchor.set(0.5)
+
+
+    //   let sprite = PIXI.Sprite.from("./assets/ferrar.png");
+    //   // sprite.anchor.set(0.5)
+    //   sprite.x = innerWidth / 2 - 250;
+    //   game.loader.load(() => {
+    //     game.stage.addChild(sprite);
+    //   });
+
+     
+      game.loader.add('car','assets/icons8-sedan-64.png').load(
+        () => {
+            let sprite = PIXI.Sprite.from("car");
+            sprite.x = innerWidth / 2 - 250;
+        game.stage.addChild(sprite);
+      });
+    
+
+      let pDiv = document.getElementById('progress')
+      game.loader.onProgress.add((e)=>{
+        console.log('loaded',e.progress);
+        pDiv.style.width = e.progress+"%"
+
+        // if(e.progress == 100){
+        //     pDiv.style.width = 0
+        // }
+      })
+    </script>
+  </body>
+</html>

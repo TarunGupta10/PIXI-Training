@@ -1,0 +1,28 @@
+Assets =  
+    👉 cards, bg, sounds, fonts
+
+Loading screen = 
+    👉 Loading bar, game logo/text, info, ad
+
+Landing/welcome/intro screen =
+    👉 play, setting, leader board, exit-buttons
+    👉 levels (optional)
+
+Game screen = 
+    👉 bg
+    👉 HUD = Head UP Display
+            🔹score
+            🔹timing
+            🔹cards remaining
+            🔹setting
+            🔹Exit,undo,  back-button
+    👉 play area
+        🔹cards - 12 -24
+           🔹 card
+                🔹back
+                🔹front
+
+Result screen = 
+    👉 message
+    👉 score
+    👉 exit,restart
