@@ -7,6 +7,7 @@ const game = new PIXI.Application({
 document.getElementById("game").append(game.view);
 
 loadAssets([
+    { name:"logo", url:"/assets/icons8-cards-100.png"},
     { name:"back", url:"/assets/cardback.png"},
     { name:"front", url:"/assets/carddeck.png"},
 ], start)
@@ -34,28 +35,59 @@ function loadAssets(list, onLoadComplete) {
 
 function start(loader, resources) {
   console.log('params ', arguments);
+
+
+  const logo = PIXI.Sprite.from(resources['logo'].texture);
+  logo.scale.set(0.5);
+  logo.x = 40
+  logo.y = 20
+  game.stage.addChild(logo);
+
   var d = 80
-  for(var i=0;i<4;i++){
+  for(var i=0;i<5;i++){
   const back = PIXI.Sprite.from(resources['back'].texture);
   back.scale.set(0.12);
   back.x = d
-  back.y = 30
+  back.y = 100
   game.stage.addChild(back);
-  d=d+400
+  d=d+300
   }
-  let x = 0
-  let y = 0
+  var x = 0
+  var y = 0
   var e=80
-  for(var i=0;i<4;i++){
+  for(var i=0;i<5;i++){
   const card = new PIXI.Texture(resources['front'].texture,
   new PIXI.Rectangle(0,0,125,181));
   const front = PIXI.Sprite.from(card);
   front.scale.set(1);
-  front.style.display = "none"
   front.x = e
-  front.y = 30
+  front.y = 100
   game.stage.addChild(front);
-  e=e+400
+  e=e+300
+  x+=125
+  y+=181
+  }
+  var d = 80
+  for(var i=0;i<5;i++){
+  const back = PIXI.Sprite.from(resources['back'].texture);
+  back.scale.set(0.12);
+  back.x = d
+  back.y = 360
+  game.stage.addChild(back);
+  d=d+300
+  }
+  var x = 0
+  var y = 0
+  var e=80
+  for(var i=0;i<5;i++){
+  const card = new PIXI.Texture(resources['front'].texture,
+  new PIXI.Rectangle(0,0,125,181));
+  const front = PIXI.Sprite.from(card);
+  front.scale.set(1);
+  front.x = e
+  front.y = 360
+  game.stage.addChild(front);
+  e=e+300
   x+=125
   y+=181
   }
