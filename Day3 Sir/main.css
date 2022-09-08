@@ -13,16 +13,16 @@
     text-align: center;
 }
 #barContainer{
-    position:absolute;
-    height:50px;
-    width:200px;
-    bottom:10%;
-    left:50%;
-    margin-left:-100px;
-    color:white;
+    position: absolute;
+        height: 4%;
+        width: 400px;
+        background-color: rgb(255, 60, 60);
+        bottom: 10%;
+        left: 50%;
+        margin-left: -200px;
 }
 #bar{
     width:0;
     height:5px;
-    background-color: green;
+    /* background-color: green; */
 }

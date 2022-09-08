@@ -4,9 +4,9 @@ import { loadAssets } from "./js/loader.mjs";
 
 export function createGame(div) {
     const game = new Application({
-        width:1024,
-        height:920,
-        backgroundColor:0x2266FF
+        width:innerWidth,
+        height:innerHeight,
+        backgroundColor:0xabdbe3
     });
     console.log('game', game);
     div.appendChild(game.view);
