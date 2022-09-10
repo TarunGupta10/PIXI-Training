@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.5.2/browser/pixi.js"
+      integrity="sha512-XHX32YCocEDCIiENmO7pf91TtRITLfCagN+uLlj9sJ7RUVBHN1JZtlfb02x4OyXfkuQegd1u6i9mzpRMg+w5xw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #progress{
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: blue;
+            height: 3px;
+            width: 0;
+            z-index: 1999;
+        }
+    </style>
+  </head>
+  <body>
+
+    <div id="progress">
+    </div>
+    <script>
+      console.log("pixi", PIXI);
+      const game = new PIXI.Application({
+        width : innerWidth,
+        height : innerHeight,
+        // width : 1520,
+        // height : 720,
+        backgroundColor: 0xF9E79F
+      })
+      console.log('pixi instance',game);
+      document.body.appendChild(game.view)
+
+      const hello = new PIXI.Text('Hello... Tarun 😁')
+    //   hello.x = 1520/2
+    //   hello.y = 720/2
+    //   hello.anchor.set(0.5)  
+      hello.x = innerWidth/2
+      hello.y = innerHeight/2
+      hello.anchor.set(0.5)  
+
+      game.loader.add('car','/assets/car.png').load(
+        () => {
+            const car = PIXI.Sprite.from('car')
+            game.stage.addChild(car)
+            game.stage.addChild(hello)
+        }
+      )
+    //   game.loader.add('car','assets/icons8-sedan-96.png').load(
+    //     () => {
+    //         const car1 = PIXI.Sprite.from('car')
+    //         game.stage.addChild(car1)
+    //     }
+    //   )
+
+      let pDiv = document.getElementById('progress')
+      game.loader.onProgress.add((e)=>{
+        console.log('loaded',e.progress);
+        pDiv.style.width = e.progress+"%"
+
+        // if(e.progress == 100){
+        //     pDiv.style.width = 0
+        // }
+      })
+    </script>
+  </body>
+</html>
+
+
+
+<!-- ankush-badyal-23 -->
