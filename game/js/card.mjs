@@ -5,12 +5,11 @@ import {
     Container,
   } from "https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.5.2/browser/pixi.mjs";
   import { getTextureById } from "./loader.mjs";
-  
   let cardFrames = [];
-  let w = 150;
-  let h = 150;
+  let w = 152;
+  let h = 152;
   for (let i = 0; i < 4; i++) {
-    for (let j = 0; j < 6; j++) {
+    for (let j = 0; j < 4; j++) {
       cardFrames.push([i * w, j * h, w, h]);
     }
   }
@@ -21,8 +20,11 @@ import {
   
   export function getCard(id, frame) {
     console.log("card ", id, frame);
+
     let isClicked = false;
     const container = new Container();
+
+
     const back = Sprite.from(getTextureById("back"));
     back.width = w;
     back.height = h;

@@ -1,3 +1,10 @@
+import {
+  Sprite,
+  Texture,
+  Rectangle,
+  Container,
+} from "https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.5.2/browser/pixi.mjs";
+
 const pBar = document.getElementById("bar");
 const pText = document.getElementById("progress");
 export let resources;

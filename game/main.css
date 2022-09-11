@@ -11,22 +11,52 @@
     left:0;
     align-content: center;
     text-align: center;
+    background-image: url('./assets/pkwl5.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #barContainer{
     position: absolute;
     height: 4%;
     width: 400px;
-    background-color: rgb(255, 60, 60);
-    bottom: 10%;
-    left: 50%;
+    /* background-color: rgb(255, 60, 60); */
+
+    bottom: 15%;
+    left: 35%;
     margin-left: -200px;
+    text-align: right;
+
 }
 #bar{
     width:0;
-    height:5px;
+    height:20px;
+    padding: 10px;
+    background: #0125FF;
+background: -webkit-linear-gradient(right, #0125FF, #FF0104);
+background: -moz-linear-gradient(right, #0125FF, #FF0104);
+background: linear-gradient(to left, #0125FF, #FF0104);
+border-radius: 15px;
     /* background-color: green; */
+
+}
+#progress{
+    color: yellow;
+    font-size: 30px;
+    font-family: 'Lobster', cursive;
 }
 #game{
-    width:1024px;
-    height:720px;
+    width:100%;
+    height:100vh;
 }
+
+
+
+
+
+
+
+
+
+
+
+
