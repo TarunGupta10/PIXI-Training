@@ -1,0 +1,23 @@
+👉npm init -y                    install package.json
+👉npm  i -g webpack-cli
+👉npx webpack init
+👉npm install gsap
+👉npm i --save pixi.js
+👉npm i --save pixi-spine
+👉npm i --save @pixi/sound
+👉npm i --save pixi-particles
+👉npm install copy-webpack-plugin --save-dev
+
+ 
+ 
+ output: {
+    clean: true,
+    path: path.resolve(__dirname, "dist"),
+  },    
+      =  in webpack.config.js
+
+
+   "moduleResolution": "Node",            =     write this command in tsconfig.json
+
+👉npm run build:dev
+👉npm run serve
