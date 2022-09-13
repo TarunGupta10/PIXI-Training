@@ -21,3 +21,7 @@
 
 👉npm run build:dev
 👉npm run serve
+
+
+https://wheelofnames.com/
+https://pngtree.com/so/lucky-wheel
