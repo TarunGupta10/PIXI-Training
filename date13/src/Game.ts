@@ -34,8 +34,6 @@ export class Game extends Application{
         this.stage.addChild(ptr);
 
         const spinlogo = new Sprite(this.loader.resources['spinlogo'].texture);
-        // spinlogo.scale.set(1)
-        // spinlogo.anchor.set(0.5);
         spinlogo.x = 10;
         spinlogo.y = 10;
         this.stage.addChild(spinlogo);
