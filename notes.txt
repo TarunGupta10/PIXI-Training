@@ -32,4 +32,41 @@ npx http-server
 
 
              loader is a asynchronous method
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //     let Randomly = require("weighted-randomly-select")
+        //     let random = Randomly.select([
+        //         {
+        //         chance:0.01, result:0
+        //         },
+        //         {
+        //             chance:0.02, result:1
+        //             },
+        //             {
+        //                 chance:0.03, result:2
+        //                 },
+        //                 {
+        //                     chance:0.04, result:3
+        //                     },
+        //                     {
+        //                         chance:0.05, result:4
+        //                         },
+        //                         {
+        //                             chance:0.06, result:5
+        //                             },
+        //                             {
+        //                                 chance:0.07, result:6
+        //                                 },
+        // ])
       
