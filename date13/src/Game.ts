@@ -20,12 +20,12 @@ export class Game extends Application{
         let results = ""
         console.log(arr[luck])
         if(luck==2 || luck==3 || luck==5){
-            results="you are so lucky"
+            results="you are so lucky ❤❤🤑🤑"
         }
         else{
-            results="yay... you won bonus"
+            results="yay... you won bonus🤑🤑"
         }
-        let text = new Text("Yayyy... You have won : "+arr[luck]+"$ from this lucky spin wheel\n"+results)
+        let text = new Text("Yayyy... You have won : "+arr[luck]+"💲 from this lucky spin wheel\n"+results)
         text.x = innerWidth/2
         text.y = innerHeight/2
         text.anchor.set(0.5);
@@ -69,7 +69,7 @@ export class Game extends Application{
                 wheel.visible=false
                 ptr.visible = false
                 this.winnerpage(random)
-            }, 7000);
+            }, 8000);
             
         });
     }
