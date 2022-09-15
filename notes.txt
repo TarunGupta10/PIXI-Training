@@ -36,7 +36,8 @@ npx http-server
 
 
 
-
+https://pixijs.io/particle-emitter/docs/
+https://pixijs.io/pixi-particles-editor/#
 
 
 

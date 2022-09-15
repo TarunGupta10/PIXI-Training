@@ -10,6 +10,7 @@ export class Game extends Application {
         { name: "goblin", url: "assets/goblins/goblins.json" },
         { name: "boy", url: "assets/spineboy/spineboy.json" },
         { name: "hero", url: "assets/hero/hero.json" },
+        // { name: "bg", url: "assets/bg.png" },
       ],
       this.onLoad.bind(this)
     );
@@ -24,32 +25,47 @@ export class Game extends Application {
   onLoad(): void {
     this.stage.interactive = true;
 
-    const gob = new Spine(getResource("goblin").spineData);
-    gob.skeleton.setSkinByName("goblin");
-    gob.skeleton.setSlotsToSetupPose();
-    gob.state.setAnimation(0, "walk", true);
-    gob.x = this.screen.width / 2 + 250;
-    gob.y = this.screen.height - 50;
-    this.stage.addChild(gob);
+    // const gob = new Spine(getResource("goblin").spineData);
+    // gob.skeleton.setSkinByName("goblin");
+    // gob.skeleton.setSlotsToSetupPose();
+    // gob.state.setAnimation(0, "walk", true);
+    // gob.x = this.screen.width / 2 + 250;
+    // gob.y = this.screen.height - 50;
+    // this.stage.addChild(gob);
 
-    this.stage.on("pointertap", () => {
-      // change current skin
-      const currentSkinName = gob.skeleton.skin.name;
-      const newSkinName =
-        currentSkinName === "goblin" ? "goblingirl" : "goblin";
-      gob.skeleton.setSkinByName(newSkinName);
-      gob.skeleton.setSlotsToSetupPose();
-    });
+    // this.stage.on("pointertap", () => {
+    //   // change current skin
+    //   const currentSkinName = gob.skeleton.skin.name;
+    //   const newSkinName =
+    //     currentSkinName === "goblin" ? "goblingirl" : "goblin";
+    //   gob.skeleton.setSkinByName(newSkinName);
+    //   gob.skeleton.setSlotsToSetupPose();
+    // });
+
+    const bg = Sprite.from("assets/bg.png")
+    bg.width = innerWidth
+    bg.height = innerHeight
+    this.stage.addChild(bg)
 
     const spineboy = new Spine(getResource("boy").spineData);
     spineboy.x = this.screen.width / 2 - 250;
-    spineboy.y = this.screen.height - 50;
+    spineboy.y = this.screen.height - 80;
     spineboy.scale.set(0.5);
     spineboy.skeleton.setSlotsToSetupPose();
     spineboy.stateData.setMix("walk", "jump", 0.2);
     spineboy.stateData.setMix("jump", "walk", 0.4);
     spineboy.stateData.setMix("idle", "jump", 0.2);
     spineboy.stateData.setMix("jump", "idle", 0.5);
+    spineboy.stateData.setMix("run", "idle", 0.4);
+    spineboy.stateData.setMix("idle", "run", 0.2);
+    spineboy.stateData.setMix("idle", "shoot", 0.2);
+    spineboy.stateData.setMix("shoot", "idle", 0.5);
+    spineboy.stateData.setMix("run", "shoot", 0.2);
+    spineboy.stateData.setMix("shoot", "run", 0.5);
+    spineboy.stateData.setMix("run", "death", 0.4);
+    spineboy.stateData.setMix("death", "run", 0.4);
+    spineboy.stateData.setMix("idle", "death", 0.4);
+    spineboy.stateData.setMix("death", "idle", 0.3);
     spineboy.state.setAnimation(0, "idle", true);
     this.stage.addChild(spineboy);
     let previousAnim: string = "idle";

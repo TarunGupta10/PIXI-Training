@@ -1,0 +1,2 @@
+npm i @pixi/particle-emitter --save 
+npm i @pixi/particle-container
