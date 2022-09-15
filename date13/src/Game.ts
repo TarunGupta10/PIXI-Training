@@ -1,5 +1,6 @@
 import {Application, Sprite,Text} from 'pixi.js';
 import {gsap} from 'gsap';
+import { sound } from '@pixi/sound';
 export class Game extends Application{
     private spin:boolean;
     private sliceAngle = 360/7;
@@ -60,14 +61,20 @@ export class Game extends Application{
         this.stage.addChild(spinlogo);
 
         wheel.on('pointerup', ()=>{
+            sound.add("sound1","assets/sound1.mp3")
+            sound.play("sound1")
+            
             let random = Math.floor(Math.random()*7);
             let stopAngle = random * this.sliceAngle;
-                gsap.fromTo(wheel,{angle:0},{angle:3600+stopAngle, duration:5, ease:'expo.out'});
-
+                gsap.fromTo(wheel,{angle:0},{angle:3600+stopAngle, duration:6, ease:'expo.out'});
+            setTimeout(() => {
+                sound.stop("sound1")
+            }, 6000);
             wheel.interactive = false
             setTimeout(() => {
                 wheel.visible=false
                 ptr.visible = false
+               
                 this.winnerpage(random)
             }, 8000);
             

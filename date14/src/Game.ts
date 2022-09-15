@@ -1,6 +1,7 @@
 import { Application, Loader, Sprite } from "pixi.js";
 import { gsap } from "gsap";
 import { getResource, setResources } from "./Texture.utils";
+import { sound } from '@pixi/sound';
 import { Spine } from "pixi-spine";
 export class Game extends Application {
   constructor(opts: any) {
@@ -110,14 +111,20 @@ export class Game extends Application {
               currentAnim = "walk";
               revertToAnim = "walk";
               direction = 1;
+              // sound.add("sound2","assets/footsteps.mp3")
+              // sound.play("sound2")
               break;
             case "KeyA":
               currentAnim = "walk";
               revertToAnim = "walk";
               direction = -1;
+              // sound.add("sound2","assets/footsteps.mp3")
+              // sound.play("sound2")
               break;
             case "Space":
               currentAnim = "shoot";
+              sound.add("sound1","assets/blaster1.mp3")
+              sound.play("sound1")
               break;
             default:
               currentAnim = "idle";
