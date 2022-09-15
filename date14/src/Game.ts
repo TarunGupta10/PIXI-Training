@@ -42,6 +42,7 @@ export class Game extends Application {
     //   gob.skeleton.setSkinByName(newSkinName);
     //   gob.skeleton.setSlotsToSetupPose();
     // });
+    // 
 
     const bg = Sprite.from("assets/bg.png")
     bg.width = innerWidth
