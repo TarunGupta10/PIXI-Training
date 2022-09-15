@@ -189,5 +189,5 @@ export class Game extends Application {
 }
 
 function setResources(resources: Dict<LoaderResource>) {
-    throw new Error("Function not implemented.");
+   Error("Function not implemented.");
 }
