@@ -1,0 +1,23 @@
+const sboy = new Spine(getResource("sboy").spineData);
+// sboy.skeleton.setSkinByName("goblin");
+sboy.skeleton.setSlotsToSetupPose();
+sboy.stateData.setMix("walk", "jump", 0.2);
+sboy.stateData.setMix("jump", "walk", 0.2);
+sboy.state.setAnimation(0, "walk", true);
+sboy.x = this.screen.width / 2 + 450;
+sboy.y = this.screen.height - 100;
+sboy.scale.set(1);
+this.stage.addChild(sboy);
+let previousAnim2: string = "walk";
+let currentAnim2: string = "walk";
+let revertToAnim2: string = "walk";
+let direction2: number = -1;
+var defaultScale = sboy.scale.x;
+this.ticker.add(() => {
+  // sboy.scale.x = defaultScale * direction2;
+  if (currentAnim2 != previousAnim2) {
+    console.log(currentAnim2, previousAnim2);
+    sboy.state.setAnimation(0, currentAnim2, true);
+    previousAnim2 = currentAnim2;
+  }
+});

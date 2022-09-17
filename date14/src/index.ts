@@ -1,3 +1,4 @@
+// import { Sprite } from "https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.5.2/browser/pixi.mjs";
 import { Application } from 'pixi.js';
 import { Game } from './Game';
 import './css/main.css';
@@ -21,5 +22,6 @@ window.onload = ()=>{
         sharedLoader: true,
         sharedTicker: true
     });
-    gameDiv.appendChild(app.view);
+        gameDiv.appendChild(app.view);
+   
 }

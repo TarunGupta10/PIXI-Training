@@ -90,7 +90,7 @@ export class Game extends Application {
                 },
               ],
             },
-								"minMult": 1,
+								"minMult": 3,
           },
         },
         {
@@ -139,8 +139,8 @@ export class Game extends Application {
               "x": 0,
               "y": 2000
             },
-            "minStart": 600,
-            "maxStart": 800,
+            "minStart": 2000,
+            "maxStart": 2000,
             "rotate": true
           }
         },
@@ -158,7 +158,7 @@ export class Game extends Application {
             data: {
               x: 0,
               y: 0,
-              radius: 10,
+              radius: 20,
             },
           },
         },
