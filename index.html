@@ -55,6 +55,9 @@
       game.loader.add('car','/assets/car.png').load(
         () => {
             const car = PIXI.Sprite.from('car')
+            car.x = 50
+            car.y=50
+            car.scale.set(0.5)
             game.stage.addChild(car)
             game.stage.addChild(hello)
         }
