@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading Bar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.5.2/browser/pixi.js"
+      integrity="sha512-XHX32YCocEDCIiENmO7pf91TtRITLfCagN+uLlj9sJ7RUVBHN1JZtlfb02x4OyXfkuQegd1u6i9mzpRMg+w5xw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+        *{
+    margin:0;
+    padding: 0;
+}
+#loader{
+    background-color: rgb(122, 111, 111);
+    width: 100%;
+    height:100%;
+    position: fixed;
+    top:0;
+    left:0;
+    align-content: center;
+    text-align: center;
+    background-image: url('https://i1.wp.com/cornellsun.com/wp-content/uploads/2017/07/Cars-3-Daytona-500-Trailer.jpg?resize=1170%2C658&ssl=1');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#barContainer{
+    /* position:absolute;
+    height:50px;
+    width:400px;
+    bottom:40%;
+    left:42%;
+    margin-left:-50px;
+    color:white; */
+
+    position: absolute;
+        height: 4%;
+        width: 400px;
+        /* background-color: rgb(255, 60, 60); */
+        bottom: 20%;
+        left: 50%;
+        margin-left: -200px;
+    
+}
+#bar{
+    width:0;
+    height:20px;
+    /* background-color: rgb(185, 29, 29); */
+background: #EBFF01;
+background: -webkit-linear-gradient(left, #EBFF01, #01FF55);
+background: -moz-linear-gradient(left, #EBFF01, #01FF55);
+background: linear-gradient(to right, #EBFF01, #01FF55);
+}
+#progress{
+    color: chocolate;
+    font-size: 30px;
+    font-family: 'Lobster', cursive;
+}
+h2{
+    color: yellow;
+    font-family: 'Secular One', sans-serif;
+    
+}
+    </style>
+  </head>
+  <body>
+    <main id="gameContainer">
+      <div id="loader">
+        <div id="barContainer">
+          <div class="barc">
+            <div id="bar"></div>
+            <div id="progress"></div>
+            <h2>Loading...</h2>
+          </div>
+        </div>
+      </div>
+      <div id="game"></div>
+    </main>
+    <script src="./loadingbar.js"></script>
+  </body>
+</html>
